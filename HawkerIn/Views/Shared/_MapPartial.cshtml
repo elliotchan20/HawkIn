@@ -1,0 +1,112 @@
+﻿@*<style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+
+        <h3>Hawker Centre in Singapore</h3>
+        <div id="map"></div>
+        <script>
+          function initMap() {
+              var sgCenter = {lat: 1.363041, lng:103.823055};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 11,
+              center: sgCenter
+            });
+
+
+            var marker = new google.maps.Marker({
+                position: singapore,
+              map: map
+            });
+          }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN0xqOTvpph-Aei3amzqJNN8-jXwIWqAw&callback=initMap">
+        </script>*@
+
+<style>
+    #map {
+        height: 400px;
+        width: 100%;
+    }
+
+    .hawker-address-list a {
+        cursor: pointer;
+    }
+
+    .hawker-address-list {
+        column-count: 3;
+    }
+</style>
+<script>
+    var geocoder;
+    var map;
+    var marker;
+    function initMap() {
+        geocoder = new google.maps.Geocoder();
+        var sgCenter = { lat: 1.363041, lng: 103.823055 };
+        var mapOptions = {
+            zoom: 11,
+            center: sgCenter
+        }
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    }
+
+    function codeAddress(searchStr) {
+        //var address = document.getElementById('address').value;
+        if (marker != undefined)
+        {
+            marker.setMap(null);
+        }
+        var address = searchStr;
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == 'OK') {
+                map.setCenter(results[0].geometry.location);
+                map.setZoom(14);
+
+                marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN0xqOTvpph-Aei3amzqJNN8-jXwIWqAw&callback=initMap">
+</script>
+<div onload="initMap()">
+    <div id="map"></div>
+    <div class="card standard-card hawkwer-address">
+        <h3>Hawker Centre in Singapore</h3>
+        <h5>Click on Hawker Centre's name to navigate.</h5>
+        @*<input id="address" type="text" value="Sydney, NSW">
+            <input type="button" value="Encode" onclick="codeAddress()">*@
+        <ul class="hawker-address-list">
+            @{
+                List<string> hawkerCenterList = new List<string>
+                {
+                    "ABC Brickworks Market and Food Centre",
+                    "Adam Road Food Centre","Alexandra Road Hawker Centre","Amoy Street Food Centre","Ang Mo Kio Market and Food Centre[2]","Bedok Central","Boon Lay Place Food Village","Bukit Timah Market and Food Centre","Changi Village Food Centre","Chinatown Complex","Chomp Chomp Food Centre","Circuit Road Food Centre","Clementi Market and Food Centre","East Coast Park Lagoon Food Village","Eunos Crescent Market and Food Centre","Fengshan Market and Food Centre","Geylang Serai Market and Food Centre","Ghim Moh Market and Food Centre","Glutton's Bay","Golden Mile Food Centre","Golden Shoe Hawker Centre","Hong Lim Complex","Kovan Hougang Market Food Centre","Lau Pa Sat","Lavender Food Square","Maxwell Food Centre","Marine Parade Food Centre","Mei Ling Market and Food Centre","Newton Food Centre","Old Airport Cooked Food Centre","Queenstown Food Centre","Redhill Food Centre","People's Park Food Centre","Serangoon Garden Market and Food Centre","Seah Im Food Centre","Sembawang Hill Food Centre","Shunfu Mart","Tampines Round Market","Taman Jurong Market and Food Centre","Teban Gardens Market and Food Centre","Tekka Centre","Tiong Bahru Market and Food Centre","West Coast Market and Food Centre","Whampoa Food Centre"
+                };
+                foreach (string hawkerCenter in hawkerCenterList)
+                {
+                    <li>
+                        <a onclick="codeAddress('@hawkerCenter')">
+                            @hawkerCenter
+                        </a>
+                    </li>
+                }
+            }
+            @*<li>
+                <a onclick="codeAddress('ABC Brickworks Market and Food Centre')">
+                    ABC Brickworks Market and Food Centre
+                </a>
+            </li>*@
+        </ul>
+    </div>
+</div>

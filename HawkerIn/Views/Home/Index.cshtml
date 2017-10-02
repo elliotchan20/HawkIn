@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+
+}
+
+<style>
+    .jumbotron {
+        background-image: url('../../Content/Media/cover-1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .greybg {
+        color: white;
+        background-color: rgba(81, 80, 80, 0.63);
+        padding: 10px;
+        border-radius: 5px;
+        width: 350px;
+    }
+
+    .jumbotron p {
+        width: 350px;
+    }
+
+    .jumbotron h1 {
+        width: 300px;
+    }
+
+    .food-card img {
+        height: 250px;
+    }
+
+    .food-card-content {
+        /*min-height: 155px;*/
+    }
+</style>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3 greybg" style="color:whitesmoke">HawkerIn!</h1>
+        <p class="greybg" style="color:whitesmoke">Let's make Hawker Great Again!</p>
+        <p><a class="btn btn-primary btn-lg" href="~/Home/WhyJoinUs" role="button">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="food-card">
+                <div>
+                    <img style="width:100%" src="~/Content/Media/Tian_Tian_Chicken_Rice_SPH.jpg" />
+                </div>
+                <div class="food-card-content">
+                    <h4>Tian Tian Hainanese Chicken Rice</h4>
+                    <p>Located in Maxwell Food Centre on Maxwell Road, Tian Tian specializes in Hainanese white chicken rice.</p>
+                </div>
+                <div style="display:flex;justify-content:flex-start;margin-left:10px;padding:5px;padding-bottom:15px;">
+                    <a class="btn btn-primary" href="~/Home/Profile" role="button">View details &raquo;</a>
+                    <a class="btn btn-secondary" href="#" role="button">Go there. &raquo;</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="food-card">
+                <div>
+                    <img style="width:100%" src="~/Content/Media/wowowest.jpg" />
+                </div>
+                <div class="food-card-content">
+                    <h4>Wow Wow West Genuine</h4>
+                    <p>Wow Wow West is a stall located in ABC Brickworks Market serving Western cuisine such as pork chop and chicken cutlet.</p>
+                </div>
+                <div style="display:flex;justify-content:flex-start;margin-left:10px;padding:5px;padding-bottom:15px;">
+                    <a class="btn btn-primary" href="~/Home/Profile" role="button">View details &raquo;</a>
+                    <a class="btn btn-secondary" href="#" role="button">Go there. &raquo;</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="food-card">
+                <div>
+                    <img style="width:100%" src="~/Content/Media/babas-peranakan.jpg" />
+                </div>
+                <div class="food-card-content">
+                    <h4>Babas Peranakan</h4>
+                    <p>Babas Peranakan serves Peranakan and Nonya cuisine. They offer Ayam Tandoori and Curry Chicken.</p>
+                </div>
+                <div style="display:flex;justify-content:flex-start;margin-left:10px;padding:5px;padding-bottom:15px;">
+                    <a class="btn btn-primary" href="~/Home/Profile" role="button">View details &raquo;</a>
+                    <a class="btn btn-secondary" href="#" role="button">Go there. &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container" style="text-align:center;margin:30px">
+            <h2>Welcome to HawkerIn!</h2>
+            <h3>Join us to preserve our hawker heritage and redefine hawker industry!</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="hawker-map">
+            @Html.Partial("_MapPartial")
+        </div>
+    </div>
+    <hr>
+</div>

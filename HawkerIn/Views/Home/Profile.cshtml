@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+}
+
+    <div class=row>
+        <div class=col-md-3>
+            <div class="card">
+                <div class=profile-img>
+                    <img style='width:100%' src="~/Content/Media/HawkerProfileSample/tiantian3.jpg" />
+                </div>
+                <div class=profile-card>
+                    <h4>Tian Tian Hainanese Chicken Rice</h4>
+                    <div>Located in Maxwell Food Centre on Maxwell Road, Tian Tian specializes in Hainanese white chicken rice.</div>
+                    <hr>
+                    <div class=user-stats>
+                        <div><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i> 29453 Likes this</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="about-card">
+                    <h4>About</h4>
+                    <div class=about-item>
+                        <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Address
+                        <p>1 Kadayanallur Street, #01-10/11 Maxwell Food Centre</p>
+                    </div>
+                    <hr>
+                    <div class=about-item>
+                        <i class="fa fa-phone fa-lg" aria-hidden="true"></i> Phone
+                        <p>(65) 9691 4852</p>
+                    </div>
+                    <hr>
+                    <div class=about-item>
+                        <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> Opening hours
+                        <p>Tue to Sun: 11:00 – 20:00 (or earlier if sold out)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=col-md-6>
+            <div class=card>
+                <div class=content-card>
+                    <h4>History</h4>
+                    Tian Tian has been voted as the best chicken rice hawker stall in Singapore by local foodies. Anthony Bourdain, an American celebrity chef, host of Travel Channel’s culinary, has reported that “Chicken rice is so fragrant and delicious that it can be eaten on its own”.
+
+                    <hr>
+                    <h4>Highlight</h4>
+                    <div class=highlight-item>
+                        <i style="color:yellow" class="fa fa-lightbulb-o fa-lg" aria-hidden="true"></i>
+                        <b>Fragrant and tasty rice</b>
+                        <p>Rice sounds simple, but is the cornerstone of Tian Tian. The rice is cooked in the chicken stock to perfection – full of flavour and oily as the way Hainanese chicken rice should be.</p>
+                    </div>
+                    <div class=highlight-item>
+                        <i style="color:yellow" class="fa fa-lightbulb-o fa-lg" aria-hidden="true"></i>
+                        <b>Reasonable prices</b>
+                        <p>A decent portion of chicken and rice plus a bowl of chicken broth costs 3.50 Singapore dollars. Basically, it is the usual price for any hawker foods in Singapore. But we can say that Tian Tian’s price is a steal for its good quality and taste.</p>
+                    </div>
+                </div>
+            </div>
+            <div class=card>
+                <div class=review-card>
+                    <h4>Reviews</h4>
+                    <div class='row review-item'>
+                        <div class=col-md-3><img style='width:100%' src="~/Content/Media/sample-user2.jpg"></div>
+                        <div class=col-md-9>
+                            <b>"BEST Chicken Rice in Singapore"</b>
+                            <p>There is always a long queue at Tian Tian Hainanese Chicken Rice and the average time for waiting is around twenty minutes.</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class='row review-item'>
+                        <div class=col-md-3><img style='width:100%' src="~/Content/Media/sample-user.jpg"></div>
+                        <div class=col-md-9>
+                            <b>"BEST Chicken Rice in Singapore"</b>
+                            <p>There is always a long queue at Tian Tian Hainanese Chicken Rice and the average time for waiting is around twenty minutes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='card standard-card col-md-2' style="margin-left:10px;">
+            <p>Photos</p>
+            @for (int i = 1; i < 5; i++)
+            {
+                string imgpath = "/Content/Media/HawkerProfileSample/t" + i + ".jpg";
+                <img style="width:100%;margin-bottom:5px" src='@imgpath' />
+            }
+        </div>
+
+
+    </div>

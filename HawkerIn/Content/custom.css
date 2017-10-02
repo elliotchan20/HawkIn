@@ -1,0 +1,126 @@
+﻿/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+    padding-top: 4rem;
+    background-color: #f2f2f2;
+}
+
+.navbar-brand {
+    background-color: #007bff;
+    /*padding: 4px;*/
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bolder;
+}
+
+.navbar-default {
+    padding-right: 20px;
+}
+
+.food-card {
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    border-radius: 2px;
+}
+
+.food-card-content {
+    padding: 15px 15px 5px 15px;
+}
+
+
+.card {
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    border-radius: 2px;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+
+.standard-card {
+    padding: 10px;
+}
+
+.profile-card, .content-card, .about-card, .review-card {
+    padding: 20px;
+    font-size: smaller;
+}
+
+    .profile-card h6 {
+        margin: 5px;
+    }
+
+.highlight-item {
+    padding-top: 5px;
+}
+
+.about-item {
+    padding-top: 2px;
+}
+
+.review-item {
+    margin-bottom: 5px;
+}
+
+/*Why Join Us*/
+.benefit-card {
+    /*padding: 20px 30px 20px 10px;*/
+    padding: 0px 30px 0px 10px;
+    /*margin-top: 30px;*/
+    min-height: 170px;
+}
+
+.icon-holder {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.joinus-card {
+    padding: 20px 20px 20px 20px;
+}
+
+.mission-card {
+    padding: 20px 30px 50px 20px;
+}
+
+/*Hawkerpreneur*/
+.start-guide {
+    padding: 20px 30px 20px 10px;
+}
+
+.guide-content {
+}
+
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*Hawkersell*/
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.market-section {
+    margin-top: 38px;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-card img {
+    height: 150px;
+}
+
+.product-card {
+    padding: 10px;
+    width: 20%;
+}
